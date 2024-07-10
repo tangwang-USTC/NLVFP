@@ -1,2 +1,1 @@
-# PSVFP0D
-0D model of Vlasov-Fokker-Planck (VFP) procedure with Pseudo-Spectral method
+Nonlinear 0D-1V model of Vlasov-Fokker-Planck (VFP) solver
