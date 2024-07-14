@@ -1,0 +1,179 @@
+  This version has been updated according to the following features:
+   
+  1. `ocp`: Apllying the unique Chebyshev grids with number `ocp` as to refining the background distribution function 
+     to compute the Rosenbluth potentials `HLM/GLM` and their derivatives.
+
+  2. Roberg: Roberg integration are used for moments based on the background uniform meshgrids.
+
+  3. ODE: Updating the ODE solvers. 
+
+  4. `wcck` can be used to improve the performance of the procedure.
+
+  5. `nMod`: `nMod in [1,2,3]` has been verified for `fM`
+
+  6, `is_nai_const = true`
+
+  7, `nMod`: self-adaptive `nMod` is ok
+
+  8, `cf3`: Fokker-Planck collision which include the normalized parameter `na / vath^3` is included
+  
+  9, `v`: Explicit solver is used to solve the nonlinear FPS equation when `v` is const instead of `vhe` is const.
+
+  10, `Callback` has been verified for ODE solvers.
+
+  11, Implicit Euler solver
+
+  12, The principal of moments reduction
+
+  13, Weak form: The discretion form according to the weak form；But the temperatures are calculated according to the constraint `Ka = 3/2 * na * Ta + 1/2 * ma * na * ua^2`.
+
+  14, M-theorems are applied to be as the constraints of Fokker-Planck collision equations.
+
+  15, `ve` is updating according to the distribution function for every spices.
+  
+  16, `vGmax` is self-adaptive according to the convergence of the normalized moments `Mhscj`.
+  
+  17, Moments: Updating the discrete integrals `Mhjlkk1 = 4pi * int(vhk1^(j+2) * Chlk)dvhk1`, where `Chlk = Chl(t_k)` and `vhk1 = vh(t_(k+1))`
+       or `Mhjlk = Mhjlkk`, which are decided by the choice of `vhk = ve / vthk` or `vhk = ve / vthk1`
+  
+  18, Data structure: Type of `fvL`, `dtfvL` are updated as `y[ns]`.   
+
+  19, Moment solver: `Ms` is the variables instead of `fvL`;
+      `LM`: self-adaptive `LM` ls applied.   
+
+  20, ODE:
+      i. High-order RK(4/5) method are used to solve the ODEs.
+
+      ii. High-order implicit RK(4) method are used to solve the ODEs.
+
+      iii. Methods in `DifferentialEquations.jl` can be used to solve the ODEs, include methods in `IRKGaussLegendre.jl`, `GeometricIntegrators` and so on.
+
+  21, Parameters: `nai, uai, vthi` are slow variable function respect to time, which are limited by the relative change rate of `na, Ia, Ka, vath`.
+
+  22, datafiles: files of datas to be saved will be updated: RootPath _ MaterialProperties _ PhysicalProperties _ Algorithm _ datasets
+
+  23, i. Implicit Gauss-Legendre scheme will be used for time evolution: matrix `A`
+
+      ii. difference matrix `D` ?
+ 
+  24, `fDM` model when `nMod = 1` is accomplished 
+ 
+  25, `njMs`: `is_MjMs_max = true` means `njMs :> 2nMod` if for `Mck` and `nMod` is to decided parameters `nai`, `uai` and `vthi`. 
+
+  26, `is_nMod_adapt`: The turning point when `Ta_i = Ta_j` is need to be deal according to the following paths:
+    
+      A, adaptive time step (dtk) method;          -- Hitting the critical point to reduce the error for the bifurcation theory.
+      B, bifurcation theory;                       -- has been implemented
+      C, improving the algorithm robustness.       -- iteration conditions
+  
+  27, Timestep (I): Characteristic time scales (`tau`) are calculated (multi-scale problem) 
+                    to improve the performance of the algorithm by limit the timestep.
+
+  28, `uC`: Lagrange coordinate system are applied for two-spices collision models.
+      i. uC = 0.0, 
+      ii. uC = (ma * na * ua + mb * nb * ub) / (ma * na + mb * nb).   -- Fixed Lagrange coordinate system.
+      iii. uC = (vbth * ua + vath * ub) / (vath + vbth).              -- The optimized Lagrange coordinate system which is adaptive.
+      iV. `iii` to be the default scheme and `uC` has been updated from the bug of the program error.
+  
+  29，Moment solver: Based on the key parameters `Mcj` instead of function `fvL` to construct the algorithm.
+  
+  30, Bug to be careful: The global parameters and local parameters of julia language: `Ms = `, `Ms[:,:,:] = `.
+
+  31, Entropy of the artificial neuron、each spice and the total system. 
+        I. Entropy increase theorem is applied to be a creterion of bifurcation and terminating condition.
+        II.
+        
+  32, Timestep (II): Adding the timestep procedure which include both the characteristic time-scale `tau` and 
+                    the limit of change rate of variables `n, I, K`.
+   
+  33, Four systems of the `NNAPS, Neural Network aided Physical Simulation`:
+        I. The Physical Simulation (PS) system;
+        II. The Neural Network (NN) system;
+        III. The Genetic Network (GN) system;
+        IV. The Expert System (ES);
+      Those three systems make up an embryonic form of Intelligent Computing system for Physical Simulation.
+
+  34, Hyperparameters: Hyperparameters `nMod(7)`, `vGmax(16)`, `LM(19)`, `dtk(26)` and `uC` will be adaptive.
+  
+  35, Combinning the procedures of Characteristic parameters (CP) version `FP0D2Vd_nuTi` and Moments solver version `FP0D2V_Mc` by parameter `is_fvL_CP`.
+  
+  36, Removing the parameter `Msj_adapt` and `is_Mtheo`.
+
+  37, `nMod`: Overcome the limit of the old version of characteristic parameters (CP) optimization algorithm (optimfvL0_fM.jl) owing to overdetermined problem,
+    
+      which achieve the goal of bifurcation (`nMod` adaptively) ro be a build-in program in the optimization process.
+
+  38, datafiles: Datas files to save and read have been updated.
+
+  39, `vh`: Nodes on velocity axis are give by two strategies: 
+    
+      I. Uniform grids (last version)
+
+      II. Chebyshev grids
+  
+  40, `njMs-` or `nMjMs-` will be self-adaptive in by function `Mhinitial_fDM!` just like other hyperparameters `nMod-(7)`, `vGmax(16)`, `LM(19)`, `dtk(26)` and `uC`.
+      
+      key hyperparameters:   1. ns,  2. uC,      3. (LM, nMod),  4. (vGmax, nnv, ocp), 5. nMjMs([j]),      6. dtk.
+      which are relative to: spices, coordinate, spectral space,    velocity space,       characteristics,    time scales
+
+  41, `C`: Numerical conservations have been achieved at the bifurcation points.
+
+  42, `C`: Posterior conservations of mass, momentums and total energy are added by switch `is_enforce_errdtnIKab` 
+      which is always be true for Chebyshev nodes when `gridv_type=:chebyshev`.
+      But for uniform nodes when `gridv_type=:uniform`, no enforcing `dtnIK` to be conservative except for the special conditions.
+    
+  43, `C`: The local errors of numerical conservations with posterior conservations will be outputted when `is_Cerror_dtnIK=true`.
+
+  44，Version `IK` when `is_fvL_CP=true` has been accomplished. This version limits `vadaptlevels=1` unless the data structure has been updated.
+
+  45, Giving the Physical Simulation (PS) result of soving Fokker-Planck equation with aboving algorithms for `fM` when `ns * nMod = 2.
+
+  45, datatypes: Uniforming the datatypes.
+
+  46, Multispices version, `e-D-T-Alpha`.
+  
+  47, Timestep (III): timestep will be limited by parameter `ratio_Rdtfln` with relation `dt * (∂ₜfLn / fLn) = ratio_Rdtfln ≪ 1`
+  
+  48, Timestep (IV): timestep will be limited by the general kinetic dissipations `Rc_jl` during Coulomb collision processes between different spices.
+                    Different strategies could be to implement in the procedures by hyperparameter `dt_order_Rc ∈ [:min, :mid, :max]`.
+
+  49, Timestep (V): timestep will be affected by the general kinetic dissipations `Rc_jl^aa` during self-collision processes by hyperparameter `is_dtk_order_Rcaa`.
+
+  50, lnAab: Coulomb logarithm in bi-Maxwellian collisions.
+
+  51, optimization: `Nspan_optim_nuTi` will be updated adaptively according to the timestep and its change rate together with the change rate of last characteristic parameters.
+
+  52, meshgrids: Updating the meshgrids codes to be a adaptive version, `nvc` and more clear levels by `vadaptlevels`.
+
+  53, Bugs: I. Programming language features: Pointer index and variables.
+      
+           II. Overcome the bug that the total algorithm loses its sysmetry when the exchange the parameters of spices `a` and `b` during Coulomb coliisions.
+
+  54, Remove hyperparameters `L_shape`, `jMax_vGmax`, `is_out_shape`, `is_nMod_adapt` to give a adaptive algorithm.
+
+  55, Optimization: Updating the optimization method to satisfy the constraint `sum(nhas * uhas) = uha` in discrete.
+
+  57, Model: Two-temperatures thermal equilibration model, FPTaTb.
+
+  58, L1: `L_Mh_limit` for the order of `Mh`
+
+  59, Version: `fvL - Ms - IK`, three to be one
+
+  60a, NK, self-adaptive: `is_nai_const=false`
+
+  60b, is_nMod_selfadapt: Subgroup of `NK`, named `nMod` will be added with number `NnMod` and `nMods = Vector(NnMod)` and `NK = sum(nMod)`
+
+      key hyperparameters:   1. ns,  2. uC,      3. (LM, NK, NnMod, nMod),  4. (vGmax, nnv, ocp), 5. nMjMs([j]),      6. dtk.
+      which are relative to: spices, coordinate, spectral space,               velocity space,       characteristics,    time scales
+  
+  61, Classification: 
+
+Todo list:
+  
+  61, (nnv, ocp) will be self-adaptive under a given tolerance:
+
+  62
+
+  
+Todo list:
+  

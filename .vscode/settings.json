@@ -1,0 +1,15 @@
+{
+    "editor.tabCompletion": "on",
+    "diffEditor.codeLens": true,
+    "spellright.language": [
+        "el",
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "editor.suggest.showKeywords": true,
+    "workbench.settings.openDefaultKeybindings": true
+}
