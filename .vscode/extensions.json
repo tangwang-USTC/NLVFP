@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "steoates.autoimport",
+        "platformio.platformio-ide",
+        "ban.spellright",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "streetsidesoftware.code-spell-checker-arabic",
+        "lumozx.kite-snippets-basic",
+        "ryu1kn.partial-diff"
+    ]
+}
