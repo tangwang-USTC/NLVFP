@@ -4,8 +4,8 @@ Project home for the three-space, three-velocity (3D3V) nonlinear Vlasov–Fokke
 
 ## Model-specific repositories
 
-- [nlvfp0d1v](https://github.com/tangwang-USTC/nlvfp0d1v) — homogeneous, isotropic radial 0D1V Julia solver and its verified 0.0.1 baseline.
-- [nlvfp1d2v](https://github.com/tangwang-USTC/nlvfp1d2v) — separate one-space, two-velocity (1D2V) project.
+- [NLVFP0D1V](https://github.com/tangwang-USTC/NLVFP0D1V) — homogeneous, isotropic radial 0D1V Julia solver and its verified 0.0.1 baseline.
+- [NLVFP1D2V](https://github.com/tangwang-USTC/NLVFP1D2V) — separate one-space, two-velocity (1D2V) project.
 
 ## Historical implementation
 
