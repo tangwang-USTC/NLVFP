@@ -1,0 +1,28 @@
+name = "NLVFP0D1V"
+uuid = "afaff726-df62-4f39-8c38-e540d84fdbdb"
+version = "0.0.1"
+
+[deps]
+FastGaussQuadrature = "442a2c76-b920-505d-bb47-c5924d526838"
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+LeastSquaresOptim = "0fc2ff8b-aaa3-5acd-a817-1944a5e08891"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
+SHA = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+
+[compat]
+FastGaussQuadrature = "=1.0.2"
+ForwardDiff = "=0.10.36"
+LeastSquaresOptim = "=0.8.5"
+QuadGK = "=2.11.0"
+SpecialFunctions = "=2.4.0"
+julia = "1.12"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

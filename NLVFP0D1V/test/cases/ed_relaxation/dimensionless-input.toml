@@ -1,0 +1,22 @@
+schema = 1
+authority = "physical"
+formulation = "0D1V-isotropic-3V-radial"
+case_id = "ed_relaxation"
+species = ["e", "D"]
+source = "Independent analytic normalization and prescribed numerical test grid"
+relative_assertion_tolerance = 2e-14
+
+[assertions]
+mass_ratios = [1.0, 3670.4829676875165]
+density_ratios = [1.0, 1.0]
+thermal_widths = [1.224744871391589, 0.01650586897926008]
+total_energy = 1.875
+cross_collision_coefficient = 852.7307072508238
+velocity_unit_m_per_s = 5.930969580731296e7
+time_unit_s = 0.25966523492993543
+
+[discretization]
+quadrature_order = 12
+time_nodes_tau = [0.0, 4.656612873077393e-10, 9.313225746154785e-10]
+electron_edges_in_initial_thermal_speed = [0.0, 0.006, 0.012, 0.02, 0.033, 0.057, 0.09, 0.15, 0.245, 0.4, 0.65, 1.0, 1.5, 2.0, 2.8, 3.8, 5.0, 7.0, 10.0, 14.0]
+deuteron_edges_in_initial_thermal_speed = [0.0, 0.25, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 14.0]

@@ -1,0 +1,4 @@
+
+# Preserve the checksum-verified Julia package bytes across checkouts.
+NLVFP0D1V/** -text whitespace=cr-at-eol,-blank-at-eof
+NLVFP0D1V/src/internal/** -text whitespace=cr-at-eol,-blank-at-eof,-blank-at-eol

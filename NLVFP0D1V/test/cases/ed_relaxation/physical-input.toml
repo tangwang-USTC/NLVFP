@@ -1,0 +1,14 @@
+schema = 1
+authority = "physical"
+formulation = "0D1V-isotropic-3V-radial"
+case_id = "ed_relaxation"
+species = ["e", "D"]
+source = "NLVFP model verification fixture with analytical Maxwellian initial state"
+
+[plasma]
+mass_kg = [9.1093837139e-31, 3.3435837768e-27]
+densities_m3 = [1e20, 1e20]
+temperature_keV = [15.0, 10.0]
+charge_e = [-1, 1]
+coulomb_log = [[17.0, 17.0], [17.0, 17.0]]
+temperature_unit_keV = 10.0

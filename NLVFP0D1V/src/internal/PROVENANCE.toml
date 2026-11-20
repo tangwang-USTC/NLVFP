@@ -1,0 +1,73 @@
+schema = 1
+source_commit = "e3c27ea6641ff9a3dcbf5a16479409f6549832ac"
+scope = "repository numerical source closure"
+
+[[file]]
+origin = "programs/legacy_jcp/algorithms/EDCase1Interfaces.jl"
+path = "src/internal/legacy_jcp/algorithms/EDCase1Interfaces.jl"
+sha256 = "35c73b832593d799ee97bf5635f1b73f5482520ce253c18e60ba2348f8435777"
+
+[[file]]
+origin = "programs/legacy_jcp/algorithms/EDKingObservations.jl"
+path = "src/internal/legacy_jcp/algorithms/EDKingObservations.jl"
+sha256 = "71b0a8cf64d18658eae22b4bc206ef444f0d25a8813f543c68e258cbf70ff41c"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/C1PositiveShellClosure.jl"
+path = "src/internal/legacy_jcp/reference/C1PositiveShellClosure.jl"
+sha256 = "4f75a8bfa3981c261e08d1c0365356403051401f6012192f58b0642cd06ebb5a"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/EDContinuousShell.jl"
+path = "src/internal/legacy_jcp/reference/EDContinuousShell.jl"
+sha256 = "dd403783eb8a52f362e8aaaa474e6b62b555b2976dbbce88f5edffa121d1f321"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/EDElectronObservables.jl"
+path = "src/internal/legacy_jcp/reference/EDElectronObservables.jl"
+sha256 = "1fea184291781eaed3399fa446b144f77adb6dd1111a34631d59628782d5fae3"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/IsotropicKingDynamics.jl"
+path = "src/internal/legacy_jcp/reference/IsotropicKingDynamics.jl"
+sha256 = "90ecd278080474335cc3eb2b152ba60483ba1f8982bb5ba3370485b3f9b36dc1"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/IsotropicKingFit.jl"
+path = "src/internal/legacy_jcp/reference/IsotropicKingFit.jl"
+sha256 = "03195f0933a324f2e12fbadf48a3f27c90607c18e0d9aaa570f43ad9ab893a95"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/KingDefinition.jl"
+path = "src/internal/legacy_jcp/reference/KingDefinition.jl"
+sha256 = "a47ec9e3a3f63f76df89398dc6a3c4bf02b96ef2bd7824a49c24fbdc5d041cf0"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/RadialGalerkin.jl"
+path = "src/internal/legacy_jcp/reference/RadialGalerkin.jl"
+sha256 = "274d57969794639474f93ba349429a2484a3117e4f8bb6506c3cf73bd6316db6"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/RadialHighOrder.jl"
+path = "src/internal/legacy_jcp/reference/RadialHighOrder.jl"
+sha256 = "87a66093e4c6d62f86e170eb0dd94ce5c9ccd8cfe8acafcde2572c73bfdc17b2"
+
+[[file]]
+origin = "programs/legacy_jcp/reference/RadialLandau.jl"
+path = "src/internal/legacy_jcp/reference/RadialLandau.jl"
+sha256 = "dba104a4e6a5610097d5733e1836b17cfd1dc141adcbd3d69c1b4b6741abea0a"
+
+[[file]]
+origin = "programs/legacy_jcp/scripts/ED_prepared_King_source.jl"
+path = "src/internal/legacy_jcp/scripts/ED_prepared_King_source.jl"
+sha256 = "779578df22223896e74cac116444d21b199a88b8c0054bd4b2385d074388d3dc"
+
+[[file]]
+origin = "programs/legacy_jcp/scripts/ED_spectral_shell_rule.jl"
+path = "src/internal/legacy_jcp/scripts/ED_spectral_shell_rule.jl"
+sha256 = "53aef322e82d6e7fdec452272e359d5bc3d01d558d247ec8d17cd5742476b1d1"
+
+[[file]]
+origin = "programs/king_fpr/src/KingFPR.jl"
+path = "src/internal/king_fpr/src/KingFPR.jl"
+sha256 = "7ce7e33a99a18ef26dad6854f2fd681d298dd12c1ba9c27065681a941ee3adad"
